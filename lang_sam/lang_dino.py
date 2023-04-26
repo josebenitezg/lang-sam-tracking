@@ -69,22 +69,3 @@ def predict_dino(frame, text_prompt, box_threshold, text_threshold):
 
     return boxes, logits, phrases
 
-    # def predict_sam(self, image_pil, boxes):
-    #     image_array = np.asarray(image_pil)
-    #     self.sam.set_image(image_array)
-    #     transformed_boxes = self.sam.transform.apply_boxes_torch(boxes, image_array.shape[:2])
-    #     masks, _, _ = self.sam.predict_torch(
-    #         point_coords=None,
-    #         point_labels=None,
-    #         boxes=transformed_boxes.to(self.sam.device),
-    #         multimask_output=False,
-    #     )
-    #     return masks.cpu()
-
-    # def predict(self, image_pil, text_prompt, box_threshold=0.3, text_threshold=0.25):
-    #     boxes, logits, phrases = self.predict_dino(image_pil, text_prompt, box_threshold, text_threshold)
-    #     masks = torch.tensor([])
-    #     # if len(boxes) > 0:
-    #     #     masks = self.predict_sam(image_pil, boxes)
-    #     #     masks = masks.squeeze(1)
-    #     return masks, boxes, phrases, logits
